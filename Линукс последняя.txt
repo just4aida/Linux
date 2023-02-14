@@ -1,0 +1,17 @@
+[basic_55-56e@ip-172-31-33-20 AIDA]$ touch myfirstbashscript.sh
+[basic_55-56e@ip-172-31-33-20 AIDA]$ chmod u+x myfirstbashscript.sh
+[basic_55-56e@ip-172-31-33-20 AIDA]$ nano myfirstbashscript.sh
+
+#!/bin/bash
+USER='Aida'
+date=$(date)
+dir=$(pwd)
+proc=$(ps ax | wc -l)
+sshd=$(ps ax | grep my-proc | wc -l)
+next=$(ls -l /etc/passwd | awk '{print $1}')
+
+echo "$date\Hello $USER\dir $dir\process $proc\sshd $sshd\next $next"
+
+[basic_55-56e@ip-172-31-33-20 AIDA]$ ./myfirstbashscript.sh
+
+Tue Feb 14 18:34:19 UTC 2023\Hello Aida\dir /home/basic_55-56e/AIDA\process 107\nsshd 1\next -rw-r--r--

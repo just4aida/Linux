@@ -1,0 +1,46 @@
+Шпаргалка:
+ZZ (Note: capitals) - Save and exit
+:q! - discard all changes, since the last save, and exit
+:w - save file but don't exit
+:wq - again, save and exit
+:x - again, save and exit
+G  (shift g) - move to the last line
+/ - search (n - next) 
+i - insert text, edit mode. ECS to exit 
+u - undo last action
+dd - delete the current line ( i mode not needed) 
+Del - delete single character ( i mode not needed)
+cd ~ - заходит в домашнюю страницу
+clear - очистить страницу
+3 - создание скрипта всегда начинается с этих симв
+ssh basic_55-56e@linux.telran-edu.de - вход в Линукс
+В скриптах shall если строка начинается с № , то это коментарий к тексту
+echo -e '#!/bin/bash\n date\n echo "it works"' > script2.sh - создаем скрипт из консоли
+https://habr.com/ru/company/ruvds/blog/325522/- лекция
+crontab - отредактировать кроны
+чтобы остановить кронтаб надо нажать контролС
+ctrlK удалять строку
+env - показать все переменные системы
+which bash - полный путь до исполнительного файла
+
+циклы 
+for i in {1..5}; do echo "number: $i"; donecd
+
+for i in 1 2 3 4 5 ; do echo "number: $i"; done
+
+из консоли - for i in cpu motherboard ram psu gpu; do echo "computer part: $i"; done
+
+АРХИВЫ:
+для хранения испольуется утилита tar 
+tar -cvf    - cоздать архив с расширением tar
+du -h dir/   - посмотреть размер
+
+cжатие (и архивирует и сжимает (с разрешением gz) tar -cvzf dir1.tar.gz dir
+
+ еще один вид архива : tar -cvjf dir1.tar.bz2 dir/
+
+разархивировать tar -xvf dir1.tar -C dir_test/
+
+Сначала команда  exit потом
+разархивировать себе на комп папку  scp -r basic_55-56e@linux.telran-edu.de:/home/basic_55-56e/AIDA/arch/ Desktop/
+

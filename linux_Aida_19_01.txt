@@ -1,0 +1,201 @@
+//Пришлось полностью скопировать все с gitbush так как с командой scp в файле получалась ерунда
+
+
+Запишите в новый файл дату.
+Допишите в этот файл информацию о занятом пространстве на корневом разделе файловой системы (/)
+Допишите в файл пять последних команд из истории команд.
+Допишите в файл информацию о процессоре (/proc/cpuinfo), но отсортируйте информацию о процессоре так, чтобы остался только производитель (vendor).
+В текстовом редакторе удалите все лишнее, чтобы остался только сам вендор (например GenuineIntel или AuthenticX86)
+Допишите в файл количество процессов одним числом ( не забудьте, что первая строка не выводит сам процесс, а лишь заголовок).
+Что вам понадобится:
+ps aux, date, df и df -h, history, grep, cat, wc -l, tail +n (строка)
+Скопируйте с сервера к себе на компьютер и пришлите результирующий файл в формате txt
+ссылка для входа на сервер
+ssh basic_55-56e@linux.telran-edu.de
+для копирования с сервера на локальной машине в косоле git bash
+scp basic55-56e@linux.telran-edu.de:/home/basic55-56e/ВАШАПАПКА/ВАШФАЙЛ.txt Desktop/
+ 
+[basic_55-56e@ip-172-31-33-20 AIDA]$ touch Homework/newfile.txt | date >> newfile.txt
+[basic_55-56e@ip-172-31-33-20 AIDA]$ cat newfile.txt
+Sat Feb  4 20:04:59 UTC 2023
+[basic_55-56e@ip-172-31-33-20 AIDA]$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+devtmpfs        474M     0  474M   0% /dev
+tmpfs           483M     0  483M   0% /dev/shm
+tmpfs           483M  724K  483M   1% /run
+tmpfs           483M     0  483M   0% /sys/fs/cgroup
+/dev/xvda1      8.0G  6.9G  1.1G  87% /
+tmpfs            97M     0   97M   0% /run/user/1000
+tmpfs            97M     0   97M   0% /run/user/1007
+tmpfs            97M     0   97M   0% /run/user/1006
+[basic_55-56e@ip-172-31-33-20 AIDA]$ cd
+[basic_55-56e@ip-172-31-33-20 ~]$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+devtmpfs        474M     0  474M   0% /dev
+tmpfs           483M     0  483M   0% /dev/shm
+tmpfs           483M  724K  483M   1% /run
+tmpfs           483M     0  483M   0% /sys/fs/cgroup
+/dev/xvda1      8.0G  6.9G  1.1G  87% /
+tmpfs            97M     0   97M   0% /run/user/1000
+tmpfs            97M     0   97M   0% /run/user/1007
+tmpfs            97M     0   97M   0% /run/user/1006
+[basic_55-56e@ip-172-31-33-20 ~]$ df -h >> /AIDA/Homework/newfile.txt
+-bash: /AIDA/Homework/newfile.txt: No such file or directory
+[basic_55-56e@ip-172-31-33-20 ~]$ df -h >> AIDA/Homework/newfile.txt
+[basic_55-56e@ip-172-31-33-20 ~]$ cat AIDA/Homework/newfile.txt
+Filesystem      Size  Used Avail Use% Mounted on
+devtmpfs        474M     0  474M   0% /dev
+tmpfs           483M     0  483M   0% /dev/shm
+tmpfs           483M  724K  483M   1% /run
+tmpfs           483M     0  483M   0% /sys/fs/cgroup
+/dev/xvda1      8.0G  6.9G  1.1G  87% /
+tmpfs            97M     0   97M   0% /run/user/1000
+tmpfs            97M     0   97M   0% /run/user/1007
+tmpfs            97M     0   97M   0% /run/user/1006
+[basic_55-56e@ip-172-31-33-20 ~]$ cd AIDA
+[basic_55-56e@ip-172-31-33-20 AIDA]$ cat newfile.txt
+Sat Feb  4 20:04:59 UTC 2023
+[basic_55-56e@ip-172-31-33-20 AIDA]$ ls
+123.txt   loop01.sh  loop04.sh  newfile.txt  script1.sh  script.sh.save
+arch      loop02.sh  loop05.sh  output2.     script2.sh  txt
+Homework  loop03.sh  loop06.sh  output2.txt  script.sh
+[basic_55-56e@ip-172-31-33-20 AIDA]$ df -h >> newfile.txt
+[basic_55-56e@ip-172-31-33-20 AIDA]$ cat newfile.txt
+Sat Feb  4 20:04:59 UTC 2023
+Filesystem      Size  Used Avail Use% Mounted on
+devtmpfs        474M     0  474M   0% /dev
+tmpfs           483M     0  483M   0% /dev/shm
+tmpfs           483M  756K  483M   1% /run
+tmpfs           483M     0  483M   0% /sys/fs/cgroup
+/dev/xvda1      8.0G  6.9G  1.1G  87% /
+tmpfs            97M     0   97M   0% /run/user/1000
+tmpfs            97M     0   97M   0% /run/user/1007
+tmpfs            97M     0   97M   0% /run/user/1006
+[basic_55-56e@ip-172-31-33-20 AIDA]$ history | tail -5 >> newfile.txt
+[basic_55-56e@ip-172-31-33-20 AIDA]$ cat newfile.txt
+Sat Feb  4 20:04:59 UTC 2023
+Filesystem      Size  Used Avail Use% Mounted on
+devtmpfs        474M     0  474M   0% /dev
+tmpfs           483M     0  483M   0% /dev/shm
+tmpfs           483M  756K  483M   1% /run
+tmpfs           483M     0  483M   0% /sys/fs/cgroup
+/dev/xvda1      8.0G  6.9G  1.1G  87% /
+tmpfs            97M     0   97M   0% /run/user/1000
+tmpfs            97M     0   97M   0% /run/user/1007
+tmpfs            97M     0   97M   0% /run/user/1006
+ 1023  cat newfile.txt
+ 1024  ls
+ 1025  df -h >> newfile.txt
+ 1026  cat newfile.txt
+ 1027  history | tail -5 >> newfile.txt
+[basic_55-56e@ip-172-31-33-20 AIDA]$ lscpu
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              1
+On-line CPU(s) list: 0
+Thread(s) per core:  1
+Core(s) per socket:  1
+Socket(s):           1
+NUMA node(s):        1
+Vendor ID:           GenuineIntel
+CPU family:          6
+Model:               63
+Model name:          Intel(R) Xeon(R) CPU E5-2676 v3 @ 2.40GHz
+Stepping:            2
+CPU MHz:             2400.198
+BogoMIPS:            4800.04
+Hypervisor vendor:   Xen
+Virtualization type: full
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            256K
+L3 cache:            30720K
+NUMA node0 CPU(s):   0
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm cpuid_fault invpcid_single pti fsgsbase bmi1 avx2 smep bmi2 erms invpcid xsaveopt
+[basic_55-56e@ip-172-31-33-20 AIDA]$ lscpu | grep GenuineIntel
+Vendor ID:           GenuineIntel
+[basic_55-56e@ip-172-31-33-20 AIDA]$ lscpu | grep GenuineIntel >> newfile.txt
+[basic_55-56e@ip-172-31-33-20 AIDA]$ cat newfile.txt
+Sat Feb  4 20:04:59 UTC 2023
+Filesystem      Size  Used Avail Use% Mounted on
+devtmpfs        474M     0  474M   0% /dev
+tmpfs           483M     0  483M   0% /dev/shm
+tmpfs           483M  756K  483M   1% /run
+tmpfs           483M     0  483M   0% /sys/fs/cgroup
+/dev/xvda1      8.0G  6.9G  1.1G  87% /
+tmpfs            97M     0   97M   0% /run/user/1000
+tmpfs            97M     0   97M   0% /run/user/1007
+tmpfs            97M     0   97M   0% /run/user/1006
+ 1023  cat newfile.txt
+ 1024  ls
+ 1025  df -h >> newfile.txt
+ 1026  cat newfile.txt
+ 1027  history | tail -5 >> newfile.txt
+Vendor ID:           GenuineIntel
+[basic_55-56e@ip-172-31-33-20 AIDA]$ nano newfile.txt
+[basic_55-56e@ip-172-31-33-20 AIDA]$ cat newfile.txt
+Sat Feb  4 20:04:59 UTC 2023
+Filesystem      Size  Used Avail Use% Mounted on
+devtmpfs        474M     0  474M   0% /dev
+tmpfs           483M     0  483M   0% /dev/shm
+tmpfs           483M  756K  483M   1% /run
+tmpfs           483M     0  483M   0% /sys/fs/cgroup
+/dev/xvda1      8.0G  6.9G  1.1G  87% /
+tmpfs            97M     0   97M   0% /run/user/1000
+tmpfs            97M     0   97M   0% /run/user/1007
+tmpfs            97M     0   97M   0% /run/user/1006
+ 1023  cat newfile.txt
+ 1024  ls
+ 1025  df -h >> newfile.txt
+ 1026  cat newfile.txt
+ 1027  history | tail -5 >> newfile.txt
+ GenuineIntel
+[basic_55-56e@ip-172-31-33-20 AIDA]$ ps aux | tail +n
+tail: cannot open ‘+n’ for reading: No such file or directory
+[basic_55-56e@ip-172-31-33-20 AIDA]$ ps aux | wc -l
+120
+[basic_55-56e@ip-172-31-33-20 AIDA]$ ps aux | wc -l >> newfile.txt
+[basic_55-56e@ip-172-31-33-20 AIDA]$ cat newfile.txt
+Sat Feb  4 20:04:59 UTC 2023
+Filesystem      Size  Used Avail Use% Mounted on
+devtmpfs        474M     0  474M   0% /dev
+tmpfs           483M     0  483M   0% /dev/shm
+tmpfs           483M  756K  483M   1% /run
+tmpfs           483M     0  483M   0% /sys/fs/cgroup
+/dev/xvda1      8.0G  6.9G  1.1G  87% /
+tmpfs            97M     0   97M   0% /run/user/1000
+tmpfs            97M     0   97M   0% /run/user/1007
+tmpfs            97M     0   97M   0% /run/user/1006
+ 1023  cat newfile.txt
+ 1024  ls
+ 1025  df -h >> newfile.txt
+ 1026  cat newfile.txt
+ 1027  history | tail -5 >> newfile.txt
+ GenuineIntel
+121
+
+
+Lenovo@LAPTOP-QN76KSQP MINGW64 ~
+$ scp -r basic_55-56e@linux.telran-edu.de:/home/basic_55-56e/AIDA/Homework/newfile.txt Desktop/
+newfile.txt                                                                                                                                                                                    100%  434     4.6KB/s   00:00
+
+Lenovo@LAPTOP-QN76KSQP MINGW64 ~
+$ scp basic_55-56e@linux.telran-edu.de:/home/basic_55-56e/AIDA/Homework/newfile.txt Desktop/
+newfile.txt
+newfile.txt                                                                                                                                                                                    100%  434     4.9KB/s   00:00
+bash: newfile.txt: command not found
+
+Lenovo@LAPTOP-QN76KSQP MINGW64 ~
+$ scp basic_55-56e@linux.telran-edu.de:/home/basic_55-56e/AIDA/Homework/newfile.txt Desktop/
+newfile.txt                                                                                                                                                                                    100%  434     4.7KB/s   00:00
+
+Lenovo@LAPTOP-QN76KSQP MINGW64 ~
+$ scp basic_55-56e@linux.telran-edu.de:/home/basic_55-56e/AIDA/Homework/newfile.txt Desktop/
+newfile.txt                                                                                                                                                                                    100%  434     4.5KB/s   00:00
+
+Lenovo@LAPTOP-QN76KSQP MINGW64 ~
+$ scp basic_55-56e@linux.telran-edu.de:/home/basic_55-56e/AIDA/Homework/newfile.txt Desktop/
+newfile.txt                                                                                                                                                                                    100%  434     4.8KB/s   00:00
+
+

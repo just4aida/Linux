@@ -1,0 +1,17 @@
+#!/bin/bash
+
+for run in {1..2}
+do
+date +"%D:%H:%M:%S"
+sleep 2
+done
+ps -ef | wc -l
+
+touch linux.txt
+lscpu >> linux.txt
+cat /etc/os-release | awk '{print substr($1,7,6)}' | grep Amazon >> linux.txt
+
+for file in {50..100}
+do
+        touch $file.txt
+done
